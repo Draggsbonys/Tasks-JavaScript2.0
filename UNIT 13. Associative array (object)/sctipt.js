@@ -67,3 +67,68 @@ function f6 () {
   console.log(a6);
 }
 document.querySelector('.b-6').onclick = f6;
+
+//07 Добавьте input .i-7. При нажатии b-7 выполняете функцию f7. Функция должна получать из i-7 ключ. Если такой ключ есть в a7 то выводить 1 в out-7, если нет - 0.
+let a7 = {'one': 1, 'two': 2, 'three': 3};                  
+function f7 () {                                            
+  let inputKey = document.querySelector('.i-7').value;      
+  for (let key in a7) {                                        
+   if (inputKey === key) {                                  
+      document.querySelector('.out-7').innerHTML = 1;       
+      return true;                                          
+    } else {                                                
+      document.querySelector('.out-7').innerHTML = 0;       
+    } 
+  }
+}
+document.querySelector('.b-7').onclick = f7;                
+
+//08 Добавьте input .i-8. При нажатии b-8 выполняете функцию f8. Функция должна выводить значение в out-8, если ключ введенный в i-8 есть в массиве, если нет - 0.
+a8 = {'one': 1, 'two': 2, 'three': 3};
+function f8 () {
+  let inputKey = document.querySelector('.i-8').value;
+  for (let key in a8) {
+    console.log(inputKey);
+    console.log(key);
+    if (inputKey == key) {
+      document.querySelector('.out-8').innerHTML = a8[key];
+      return true;
+    } else {
+      document.querySelector('.out-8').innerHTML = 0;
+    }
+  }
+}
+document.querySelector('.b-8').onclick = f8;
+
+//09 Добавьте input .i-9. При нажатии b-9 выполняете функцию f9. Функция должна вывести в out-9 все ключи массива a9, которые содержат значение, равное значению в input.i-9. Вывод через пробел. Если значений - нет то выводить пустую строку.
+a9 = {'one': 1, 'two': 2, 'three': 1, 'four': 1}; 
+function f9 () {
+  let block = '';
+  let inputValue =+ document.querySelector('.i-9').value;
+  for (let key in a9) {
+    if (inputValue == a9[key]) { 
+      block += `${key} `; 
+      document.querySelector('.out-9').innerHTML = block;
+      console.log(block); 
+    } else {
+      document.querySelector('.out-9').innerHTML = '<br>';
+    }
+  }
+}
+document.querySelector('.b-9').onclick = f9;
+//10 Давайте напишем полезную функцию f10, которая проверяет есть ли значение в ассоциативном массиве. Фукнция должна возвращать true если есть, и false если нет. Массив и значение передавать функции в качестве параметров.
+let a10 = {'one': 1, 'two': 2, 'three': 3};
+function f10 (arr, value) {
+  let x;
+  for(key in arr) {
+    if (value == arr[key]) {
+      return true;
+    } else {
+      x = 0;
+    }
+  }
+  if (x == 0) {
+    return false;
+  }
+}
+console.log(f10(a10, 2)); //true
