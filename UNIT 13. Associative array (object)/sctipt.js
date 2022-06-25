@@ -193,3 +193,74 @@ function f14 () {
   document.querySelector('.out-14').innerHTML = out;
 }
 document.querySelector('.b-14').onclick = f14;
+//15 При нажатии b-15 выполняете функцию f15. Функция должна в out-15 выводить элементы вложенных массивов в a15. Вывод через пробел.
+a15 = {
+  'one': {'one': 1, 'two': 2, 'three': 3},
+  'two': {'four': 4, 'five': 5, 'six': 6},
+  'three': {'seven': 7, 'eight': 8, 'nine': 9},
+}
+function f15 () {
+  for (let key in a15) {
+    let subObj = a15[key];
+    for (let subKey in subObj) {
+      document.querySelector('.out-15').innerHTML += `${subKey} ${subObj[subKey]} `;
+    }
+  }
+}
+document.querySelector('.b-15').onclick = f15;
+//16 При нажатии b-16 выполняете функцию f16. Функция должна в out-16 выводить элементы name вложенных массивов в a16. Вывод через пробел.
+a16 = {
+  'one': {'name': 'John', 'two': 2, 'three': 3},
+  'two': {'four': 4, 'name': 'Ann', 'six': 6},
+  'three': {'seven': 7, 'eight': 8, 'name': 'Max'},
+}
+function f16 () {
+  for (let key in a16) {
+    let subObj = a16[key];
+    for (let subKey in subObj) {
+      if (subKey == 'name') {
+        document.querySelector('.out-16').innerHTML += `${subKey} ${subObj[subKey]} `;
+      }
+    }
+  }
+}
+document.querySelector('.b-16').onclick = f16;
+//17 При нажатии b-17 выполняете функцию f17. Функция должна в out-17 выводить элементы name вложенных массивов в a17 для который age > 30. Вывод через пробел.
+a17 = {
+  'one': {'name': 'John', 'age': 25},
+  'two': {'name': 'Ann', 'age': 35},
+  'three': {'name': 'Max', 'age': 15},
+  'four': {'name': 'Igor', 'age': 45},
+}
+function f17 () {
+  for (let key in a17) {
+    let subObj = a17[key]; 
+    if (subObj.age > 30) {
+        document.querySelector('.out-17').innerHTML += `${Object.keys(subObj)[0]}: ${subObj.name}<br>`;
+    }
+  }
+}
+document.querySelector('.b-17').onclick = f17;
+//18 При нажатии b-18 выполняете функцию f18. Функция должна в out-18 вывести станции метро из массива a18 той ветки, которую пользователь ввел в i-18. Вывод станций - через пробел. Если ветка не найдена выводите пустую строку.
+let a18 = {
+  'red': ['Akademmistechko', 'Nyvky', 'Universytet', 'Lisova'],
+  'blue': ['Minska', 'Obolon', 'Pochaina', 'Holosiivska'],
+  'green': ['Syrets', 'Zoloti Vorota', 'Klovska', 'Vidubichi'],
+} 
+function f18 () {
+  let inputKey = document.querySelector('.i-18').value; 
+  for (let key in a18) {
+    if (inputKey == key) {
+      let out = '';
+      for (let i = 0; i < a18[key].length; i++) {
+        out += `${a18[key][i]} `
+      }
+      document.querySelector('.out-18').innerHTML = out;
+      return true;
+    } else {
+      document.querySelector('.out-18').innerHTML = `<br>`; 
+    }
+  }
+}
+document.querySelector('.b-18').onclick = f18;
+
