@@ -226,7 +226,7 @@ function f16 () {
 }
 document.querySelector('.b-16').onclick = f16;
 //17 При нажатии b-17 выполняете функцию f17. Функция должна в out-17 выводить элементы name вложенных массивов в a17 для который age > 30. Вывод через пробел.
-a17 = {
+let a17 = {
   'one': {'name': 'John', 'age': 25},
   'two': {'name': 'Ann', 'age': 35},
   'three': {'name': 'Max', 'age': 15},
@@ -263,4 +263,44 @@ function f18 () {
   }
 }
 document.querySelector('.b-18').onclick = f18;
+//19 При нажатии b-19 выполняете функцию f19. Функция должна в out-19 вывести цвет ветки станции которую пользователь ввел в i-19. Пользователь может вводить текст как с большой, так и с маленькой буквы. Если ветка не найдена - выводите пустую строку.
+let a19 = {
+  'red': ['Akademmistechko', 'Nyvky', 'Universytet', 'Lisova'],
+  'blue': ['Minska', 'Obolon', 'Pochaina', 'Holosiivska'],
+  'green': ['Syrets', 'Zoloti Vorota', 'Klovska', 'Vidubichi'],
+} 
+function f19() {
+  let value = document.querySelector('.i-19').value;
+  let firstUpper = value[0].toUpperCase() + value.substr(1); 
+  console.log(firstUpper);
+  let out = document.querySelector('.out-19');
+  for (let key in a19) {
+    for (let i = 0; i < a19[key].length; i++) {
+      if (a19[key][i] == firstUpper) {
+        out.innerHTML = key; 
+      }
+    }
+  }
+}
+document.querySelector('.b-19').onclick = f19;
+//20 При нажатии b-20 выполняете функцию f20. Функция должна в out-20 вывести название станции которые содержат переход на другую ветку. Такие станции маркируются 2. Вывод через пробел.
+let a20 = {
+  "red": [['Akademmistechko', 1], ['Nyvky', 0], ['Universytet', 3], ['Lisova', 1]],
+  "blue": [['Minska', 1], ['Obolon', 0], ['Pochaina', 2], ['Holosiivska', 0]],
+  "green": [['Syrets', 1], ['Zoloti Vorota', 2], ['Klovska', 0], ['Vidubichi', 1]],
+}
+function f20 () {
+let out = '';
+for (let key in a20) {
+  for (let i = 0; i < a20[key].length; i++) {
+    for (let j = 1; j < a20[key][i].length; j++) {
+      if (a20[key][i][1] === 2) {
+        out += `${a20[key][i][0]} `;
+      }
+    }
+  }
+}
+document.querySelector('.out-20').innerHTML = out;
+}
+document.querySelector('.b-20').onclick = f20;
 
