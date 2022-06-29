@@ -49,3 +49,27 @@ document.querySelector('.one').innerHTML = z1 * z2;
 let y1 = 6;
 let y2 = 3;
 document.querySelector('.one').innerHTML = y1 / y2; 
+
+//16 Создайте две переменные x1='Hello', x2 = 5. Создайте div, класс присвойте самостоятельно, выведите в него сумму x1 + x2. Изучите результат операции.
+let x1 = 'Hello';
+let x2 = 5; 
+document.querySelector('.block').innerHTML = x1 + x2;
+
+//17 Создайте div с классом test-1. Получите его в переменную d1. Выведите эту переменную в консоль. Изучите вывод.
+let d1 = document.querySelector('.test-1');
+console.log(d1);
+
+//18 Создайте div.test-2. Получите его в переменную d2. Выведите эту переменную в консоль. Присвойте d2 значение 5 (d2 = 5). Выведите переменную в консоль. Изучите вывод.
+let d2 = document.querySelector('.test-2');
+console.log(d2);
+d2 = 5;
+console.log(d2);
+
+//19 Создайте div c классом s3 и div с классом s4. Получите div.s3 в переменную divS3. Выведите в консоль divS3. Теперь получите в эту же переменную divS3 блок div c классом s4. Выведите переменную divS3 в консоль. Изучите что изменилось.
+let divS3 = document.querySelector('.s3');
+console.log(divS3);
+divS3 = document.querySelector('.s4');
+console.log(divS3);
+
+//20 Получите c помощью querySelector тег body. С помощью innerHTML присвойте ему пустую строку (...innerHTML = ''). Изучите что произошло. Закомментируйте этот код.
+document.querySelector('body').innerHTML = ''; 

@@ -1,0 +1,31 @@
+<!--10 Дан select s-100. По нажатию кнопки, выведите value выбранного option в out-10.-->
+<div class="out-10"></div>
+<select class="s-100">
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+</select>
+
+<!--11 Дан select s-110. По изменению состояния select (событие onchange) выведите value выбранного option в out-11.-->
+<div class="out-11"></div>
+<select onchange="f11()" class="s-110">
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+</select>
+
+<!--14 Дан input i-141 и input-142, type=number. Дан select s-143, который содержит две операции - +, -, *, / . Дана кнопка b-14, при нажатии на которую срабатывает функция f14. Функция выводит в out-14 результат операций выбранной в 3-м select к числам введенным в первом и втором input. Например выбрано 1 13 +, нужно вывести результат операции 1+13 т.е. 14.-->
+<div class="out-14"></div>
+<input type="number" class="i-141">
+<select class="s-143">
+  <option>+</option>
+  <option>-</option>
+  <option>*</option>
+  <option>/</option>
+</select>
+<input type="number" class="i-142">
+<button class="b-14">Push</button>
