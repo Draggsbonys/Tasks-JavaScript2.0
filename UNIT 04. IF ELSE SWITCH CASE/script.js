@@ -8,7 +8,7 @@ function f1 () {
      out.innerHTML = false;
    }
 }
- document.querySelector('.b-1').onclick = f1; 
+document.querySelector('.b-1').onclick = f1; 
 
 //02 Даны две переменные a21 и a22. При нажатии кнопки b-2, запускается функция f2. Функция должна сравнить переменные с помощью if else и вывести в out-2 число, которое больше. Вариант равенства переменных не рассматриваем.
 function f2 (a21, a22) {
@@ -86,7 +86,6 @@ document.querySelector('.b-7').onclick = f7;
 function f8 () {
    let value = document.querySelector('.s-8').value;
    let out = document.querySelector('.out-8');
-   console.log(value);
    switch (parseInt(value)) {
        case 1:  
        out.innerHTML = 'one';  

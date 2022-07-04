@@ -159,4 +159,11 @@ function f14 () {
 }
 document.querySelector('.b-14').onclick = f14;  
 
-//15 
+//15 Кнопка b-15 запускает функцию t15 Функция должна выводить следующую последовательность в out-15: 10 0 9 1 8 2 7 3 6 4 5 5 4 6 3 7 2 8 1 9 0 10 Для вывода использовать цикл.
+function f15 () {
+  let out = document.querySelector('.out-15');
+  for (let i = 0; i <= 10; i++) {
+    out.innerHTML += `${(10 - i)} ${i} `;
+  }
+}
+document.querySelector('.b-15').onclick = f15;
