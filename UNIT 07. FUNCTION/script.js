@@ -64,3 +64,35 @@ document.querySelector('.b-6').onclick = () => {
    let z = f6(0,255);
    document.querySelector('.out-6').style.backgroundColor = `rgb(${x},${y},${z})`;
 };
+
+//08 Напишите функцию t8, которая принимает строку в качестве параметра и возвращает результат с очищенными пробелами в начале и вконце строки. Т.е. принимает _hello_ (где знак _ символизирует пробел), а возвращает hello. Для удаления пробелов - используйте trim. 
+function f8 (a) {
+   return a.trim();
+}
+document.querySelector('.b-8').onclick = () => { 
+  document.querySelector('.out-8').textContent = f8(` Hello `);
+}
+
+//09 Напишите функцию t9, которая принимает число и возвращает true, если число четное, и false если не четное. 
+function f9 (num) {
+   if (num % 2 == 0) {
+      return true;  
+   } else {
+     return false;
+   }
+}
+document.querySelector('.b-9').onclick = () => { 
+  document.querySelector('.out-9').textContent = f9(2);
+}
+
+//10 Создайте функцию t10, которая принимает 2 числа и возвращает большее из них. В случае равенства - любое из чисел. 
+function f10 (a, b) {
+   if (a > b) {
+      return a;  
+   } else {
+     return b;
+   }
+}
+document.querySelector('.b-10').onclick = () => { 
+  document.querySelector('.out-10').textContent = f10(5,10);
+}
