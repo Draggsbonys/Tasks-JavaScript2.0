@@ -85,14 +85,154 @@ function f8 () {
 let out9 = document.querySelectorAll('.out-9');
 for(let i = 0; i < out.length; i++) {
   out9[i].addEventListener('click', function f9 () {  
-  out9[i].classList.toggle('bg-9');
+  out9[i].classList.add('bg-9');
 })
 }
 
 out9.forEach((elem) => {
    elem.addEventListener('click', function f9 () {
-     elem.classList.toggle('bg-9');
+     elem.classList.add('bg-9');
    })
 })
 
-//10 
+//10 Усложним предыдущие задачи. С помощью цикла повесьте на блоки out-10 событие клик. По клику должна выполняться функция f10. Функция, должна делать toggle класса bg-10 тому out-10 на котором кликнули.
+let out10 = document.querySelectorAll('.out-10');
+for(let i = 0; i < out.length; i++) {
+  out9[i].addEventListener('click', function f10 () {  
+  out9[i].classList.toggle('bg-10');
+})
+}
+
+out10.forEach((elem) => {
+   elem.addEventListener('click', function f10 () {
+     elem.classList.toggle('bg-10');
+   })
+})
+
+//11 Добавьте кнопку .b-11, которая запускает функцию f11. Функция создает через createElement div c текстом 25 и добавляет его через append в out-11.
+function f11 () {
+  let out11 = document.querySelector('.out-11');
+  let div = document.createElement('div');
+  div.textContent = 25;
+  out11.append(div);
+}
+document.querySelector('.b-11').onclick = f11;
+
+//12 Добавьте кнопку .b-12, которая запускает функцию f12. Функция создает через createElement div c текстом 12 и добавляет ему класс bg-12. Созданный div добавляется в out-12.
+function f12 () {
+  let out12 = document.querySelector('.out-12');
+  let div = document.createElement('div');
+  div.classList.add('block-12');
+  div.textContent = 25;
+  out12.append(div);
+}
+document.querySelector('.b-12').onclick = f12;
+
+//13 Добавьте кнопку .b-13, которая запускает функцию f13. Функция создает через createElement div c текстом pushMe и добавляет ему класс bg-13. Также, созданному div добавляется событие onclick, по которому выполняется функция f13_1. Созданный div добавляется в out-13.
+document.querySelector('.b-13').onclick = f13; 
+function f13_1 () {
+    document.querySelector('.out-13-1').innerHTML += this.innerHTML;
+}
+function f13 () {
+  let out = document.querySelector('.out-13');
+  let div = document.createElement('div'); 
+  div.classList.add('bg-13');
+  div.textContent = 'pushMe';
+  out.append(div);
+  div.onclick = f13_1;
+} 
+
+//14 Добавьте кнопку .b-14, которая запускает функцию f14. Добавьте кнопук .b14-1 которая запускает функцию f14_1 Функция f14 создает через createElement <p> c текстом 14 и добавляет ему класс p-14. Созданный  <p> добавляется в out-14 с помощью append. Функция f14_1 создает через createElement <span>. Созданный  <span> добавляется в out-14 c помощью prepend
+function f14 () {
+  let out = document.querySelector('.out-14');
+  let p = document.createElement('p'); 
+  p.classList.add('p-14');
+  p.textContent = '14';
+  out.append(p);
+  console.log(out);
+} 
+function f14_1 () {
+    let span = document.createElement('span');
+    out.prepend(span);
+    console.log(out);
+}
+document.querySelector('.b-14').onclick = f14;
+document.querySelector('.b-14-1').onclick = f14_1;
+
+//15 Добавьте кнопку .b-15, которая запускает функцию f15. Функция создает через createElement <p> c текстом 15 и добавляет ему класс p-15, создает через createElement <span> с текстом 15-1 и добавляет ему класс span-15. Созданный <p> добавляется в out-15 с помощью append, созданный <span> добавляется в out-15 с помощью before.
+function f15 () {
+  let out = document.querySelector('.out-15');
+  let p = document.createElement('p'); 
+  p.classList.add('p-15');
+  p.textContent = '15';
+  out.append(p);
+  let span = document.createElement('span');
+  span.classList.add('span-15');
+  span.textContent = '15-1'
+  p.before(span);
+  console.log(out);
+} 
+document.querySelector('.b-15').onclick = f15;
+
+//16 Добавьте кнопку .b-16, которая запускает функцию f16. Функция создает через createElement <p> c текстом 16 и добавляет ему класс p-16, создает через createElement <span> с текстом 16-1 и добавляет ему класс span-16. Созданный <p> добавляется в out-16 с помощью append, созданный <span> добавляется в out-16 с помощью after.
+function f16 () {
+  let out = document.querySelector('.out-16');
+  let p = document.createElement('p'); 
+  p.classList.add('p-16');
+  p.textContent = '16';
+  out.append(p);
+  let span = document.createElement('span');
+  span.classList.add('span-16');
+  span.textContent = '16-1'
+  p.after(span);
+  console.log(out);
+} 
+document.querySelector('.b-16').onclick = f16;
+
+//17 Добавьте кнопку .b-17, которая запускает функцию f17. Функция создает через createElement <p> c текстом 17 и добавляет ему класс p-17, создает через createElement <span> с текстом 17-1 и добавляет ему класс span-17. Созданный <p> добавляется в out-17 с помощью append, созданный <span> добавляется в out-17 вместо <p> с помощью replaceWith. 
+function f17 () {
+  let out = document.querySelector('.out-17');
+  let p = document.createElement('p'); 
+  p.classList.add('p-17');
+  p.textContent = '17';
+  out.append(p);
+  let span = document.createElement('span');
+  span.classList.add('span-17');
+  span.textContent = '17-1'
+  p.replaceWith(span);
+  console.log(out);
+} 
+document.querySelector('.b-17').onclick = f17;
+
+//18 Добавьте кнопку .b-18, которая запускает функцию f18. Функция с помощью getAttribute получает data-b атрибут с параграф p-18 и выводит в out-18.
+function f18 () {
+  let out = document.querySelector('.out-18');
+  let p = document.querySelector('.p-18');
+  let data = p.getAttribute('data-b');
+  out.textContent = data;
+}
+document.querySelector('.b-18').onclick = f18;
+
+//19 Добавьте кнопку .b-19, которая запускает функцию f19. Функция с помощью getAttribute получает data-b атрибут с параграфов p-19 и выводит в out-19 через пробел. Обратите внимание, что элементов p-19 больше одного.
+function f19 () {
+  const out = document.querySelector('.out-19');
+  const paragraph = document.querySelectorAll('.p-19');
+  paragraph.forEach((p) => {
+    let data = p.getAttribute('data-b'); 
+    out.textContent += `${data} `;
+  })
+}
+document.querySelector('.b-19').onclick = f19;
+
+//20 Добавьте кнопку .b-20, которая запускает функцию f20. Функция с помощью setAttribute присваивает атрибут title="go" в div.out-20.
+function f20 () {
+  let out = document.querySelector('.out-20');
+  out.setAttribute('title', 'go');
+  console.log(out);
+}
+document.querySelector('.b-20').onclick = f20;
+
+
+
+
+
