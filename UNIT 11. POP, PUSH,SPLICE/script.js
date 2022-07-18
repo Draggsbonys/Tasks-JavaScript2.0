@@ -6,7 +6,7 @@ function showArray (elem, arr) {
     out += `${item} `;
   });
   document.querySelector(elem).textContent = out;
-}
+};
 function f1 () {
   let value = document.querySelector('.i-1').value;
   array1.push(value);
@@ -54,6 +54,86 @@ function f6 () {
 }
 document.querySelector('.b-6').addEventListener('click', f6);
 
-//07 
+//07 Напишите функцию f7, которая эмулирует метод pop, т.е. удаляет последний элемент массива d7. Эмулировать - получать результат аналогичный pop, но без применения pop. Функция может быть вызвана много раз, при этом каждый раз должен удаляться последний элемент d7.
+const array7 = ['china', 'india', 'brazil', 'japan', 'egypt'];
+let counter = 0;  
+document.querySelector('.b-7').addEventListener('click', ()=> {
+    counter += 1; 
+    console.log(counter);
+});
+function f7() {
+  showArray('.out-7', array7);
+  let index = array7.length - counter;
+  console.log(array7);
+  array7[index] = '';
+};
+document.querySelector('.b-7').addEventListener('click', f7);   
 
+//08 Напишите функцию f8, которая эмулирует работу метода unShift - добавляем значение из i-8 в начало массива d8.
+const array81 = [2,'4', 12, 67, 'hello'];
+const array8 = [];
+function f8 () {
+  const value = document.querySelector('.i-8').value;
+  array8[0] = value;
+  for (let i = 0; i < array81.length; i++) {
+    array8[i+1] = array81[i];
+  }
+  for (let i = 0; i < array8.length; i++) {
+    array81[i] = array8[i];
+  }
+  showArray('.out-8', array8);
+}
+document.querySelector('.b-8').onclick = f8;
+
+//09 Напишите функцию f8, которая эмулирует работу метода shift - на примере массива d9.
+const out9 = document.querySelector('.out-9');
+const array9 = [100, 200, 300, 400, 700, 121];
+const array91 = [];
+let elem = array9[0];
+function f9 () {
+  out9.textContent = elem;
+  for (let i = 0; i < array9.length; i++) {
+    array91[i] = array9[i+1];
+  }
+  for (let i = 0; i < array91.length; i++) {
+    array9[i] = array91[i];
+  }
+  elem = array9[0];
+}
+document.querySelector('.b-9').addEventListener('click', f9);
+
+//10 Напишите функцию f10, которая применяет к массиву d10 метод reverse и выводит полученный массив в out-10
+const array10 = [3,14,15,92,6];
+function f10 () {
+  array10.reverse();
+  showArray('.out-10', array10)
+}
+document.querySelector('.b-10').addEventListener('click', f10);
+
+//11 Напишите функцию, которая получает число из input i-11, переводит в число, и с помощью метода indexOf проверяет наличие в массиве d11. Функция выводит в out-11 -1 если такого числа нет в массиве, либо его индекс в массиве.
+const array11 = [2,3,4,5,6,7];
+const out11 = document.querySelector('.out-11');
+function f11 () {
+  let value = document.querySelector('.i-11').value;
+  out11.textContent = array11.indexOf(parseInt(value));
+}
+document.querySelector('.b-11').addEventListener('click', f11);
+
+
+
+//12 Напишите функцию f12, которая эмулирует работу метода indexOf - ищет введенное число в массиве d12 (перебором). Если числа нет - выводит -1, если есть - его позицию в массиве. 
+const array12 = [2,3,4,5,6,7];
+const out = document.querySelector('.out-12');
+function f12 () {
+  let value = document.querySelector('.i-12').value;
+  for (let i = 0; i < array12.length; i++) {
+    if (value == array12[i]) {
+      out.textContent = i;
+      return;
+    } else {
+    out.textContent = '-1';
+    }  
+  }
+}
+document.querySelector('.b-12').addEventListener('click', f12);
 
